@@ -1,6 +1,6 @@
 <template>
   <div class="grid grid-rows-layout min-h-screen">
-    <header class="h-12">
+    <header class="h-12 outline">
       <div class="flex items-center justify-between">
         <router-link
           :to="{ name: 'Home' }"
@@ -15,7 +15,7 @@
             py-2
           "
         >
-          <img src="./assets/img/turon-logo.svg" alt="Turon Wines" />
+          <img src="./img/turon-logo.svg" alt="Turon Wines" />
         </router-link>
         <nav>
           <ul class="flex items-center w-full">
@@ -67,10 +67,28 @@
         </div>
       </div>
     </header>
+    <div v-cloak>
+      <transition name="fade" mode="out-in">
+        <router-view></router-view>
+      </transition>
+    </div>
 
-    <router-view />
-    <footer class="h-foo">Footer</footer>
+    <footer class="h-foo outline">Footer</footer>
   </div>
 </template>
 
-<style></style>
+<style>
+/*** TRANSITIONS ***/
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease-out;
+}
+
+.fade-leave-to {
+  opacity: 0;
+}
+</style>

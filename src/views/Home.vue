@@ -1,17 +1,5 @@
 <template>
-  <div>
-    <HelloWorld msg="Home" />
+  <div class="">
+    <h4 class="text-center py-5">Home</h4>
   </div>
 </template>
-
-<script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue"
-
-export default {
-  name: "Home",
-  components: {
-    HelloWorld,
-  },
-}
-</script>

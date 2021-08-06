@@ -1,5 +1,5 @@
 <template>
   <div>
-    <p>all the Wines</p>
+    <h1>all the Wines</h1>
   </div>
 </template>
