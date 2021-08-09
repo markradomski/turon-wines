@@ -1,0 +1,13 @@
+/* ./src/tailwind.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom fonts */
+@layer base {
+  @font-face {
+    font-family: "Penguin Modern";
+    font-weight: 500;
+    src: url("/fonts/PenguinModern-Medium.woff2") format("woff2");
+  }
+}

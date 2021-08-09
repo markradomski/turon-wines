@@ -1,0 +1,16 @@
+.outline {
+  border: 1px solid #000;
+}
+
+[v-cloak] {
+  display: none;
+}
+
+body {
+  /* NOTE: applying this to body tag doesnt work?? */
+  @apply font-inter;
+}
+
+h1 {
+  font-family: "Penguin Modern", sans-serif;
+}

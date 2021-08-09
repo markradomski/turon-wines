@@ -68,12 +68,13 @@
       </div>
     </header>
     <div v-cloak>
-      <transition name="fade" mode="out-in">
-        <router-view></router-view>
-      </transition>
+      <!-- <transition name="fade" mode="out-in"> -->
+      <!-- TODO: try vue transiton hooks -->
+      <router-view></router-view>
+      <!-- </transition> -->
     </div>
 
-    <footer class="h-foo outline">Footer</footer>
+    <footer class="h-foo outline text-xl font-mono">Footer</footer>
   </div>
 </template>
 

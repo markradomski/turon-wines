@@ -1,3 +1,5 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 module.exports = {
   mode: "jit",
   purge: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
@@ -9,6 +11,9 @@ module.exports = {
       },
       height: {
         foo: "100px",
+      },
+      fontFamily: {
+        inter: ["'Inter'", ...defaultTheme.fontFamily.sans],
       },
     },
   },
