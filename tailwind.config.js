@@ -8,9 +8,7 @@ module.exports = {
     extend: {
       gridTemplateRows: {
         layout: "3rem 1fr 6rem",
-      },
-      height: {
-        foo: "100px",
+        container: "1fr 10rem",
       },
       fontFamily: {
         inter: ["'Inter'", ...defaultTheme.fontFamily.sans],

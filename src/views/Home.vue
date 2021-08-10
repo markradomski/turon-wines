@@ -18,5 +18,26 @@
     wine be itself, but the knowledge to step in and guide the wine in the right
     direction when necessary. Ultimately we endeavour to create wines that bring
     joy and will be here for future generations.
+
+    <br />
+    We aim to create elegant wines with intense flavour, wines that are
+    approachable and yet intriguingly complex. With a love for the environment
+    and sustainable practices at every step. We grow grapes and produce wines
+    with minimal intervention. These are vegan-friendly and express the natural
+    characters of our terroir and the grape variety. Our minimal intervention
+    approach to winemaking means having the confidence to stand back and let the
+    wine be itself, but the knowledge to step in and guide the wine in the right
+    direction when necessary. Ultimately we endeavour to create wines that bring
+    joy and will be here for future generations.
+    <br />
+    We aim to create elegant wines with intense flavour, wines that are
+    approachable and yet intriguingly complex. With a love for the environment
+    and sustainable practices at every step. We grow grapes and produce wines
+    with minimal intervention. These are vegan-friendly and express the natural
+    characters of our terroir and the grape variety. Our minimal intervention
+    approach to winemaking means having the confidence to stand back and let the
+    wine be itself, but the knowledge to step in and guide the wine in the right
+    direction when necessary. Ultimately we endeavour to create wines that bring
+    joy and will be here for future generations.
   </div>
 </template>
