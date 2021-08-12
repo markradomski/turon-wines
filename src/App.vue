@@ -24,50 +24,29 @@
       >
         <img src="./img/turon-logo.svg" alt="Turon Wines" />
       </router-link>
-      <nav class="">
+      <nav :class="[menuOpen ? 'openNav' : '']" class="nav-trans">
+        <!-- <nav
+        class="
+          h-0
+          transition-height
+          duration-300
+          delay-200
+          opacity-0
+          transition-opacity
+          duration-200
+        "
+      > -->
         <ul class="flex flex-col sm:flex-row items-center w-full">
-          <li>
-            <router-link
-              :to="{ name: 'Wines' }"
-              class="
-                px-4
-                py-3
-                block
-                hover:text-gray-300
-                transition-colors
-                duration-200
-              "
-              >Wines</router-link
-            >
-          </li>
-          <li>
-            <router-link :to="{ name: 'About' }" class="px-4 py-3 block"
-              >About</router-link
-            >
-          </li>
-          <li>
-            <router-link :to="{ name: 'Contact' }" class="px-4 py-3 block"
-              >Contact</router-link
-            >
-          </li>
-          <li>
-            <router-link :to="{ name: 'News' }" class="px-4 py-3 block"
-              >News</router-link
-            >
+          <li v-for="(item, index) in navItems" :key="index">
+            <router-link :to="{ name: item.name }" class="px-4 py-3 block">{{
+              item.name
+            }}</router-link>
           </li>
         </ul>
       </nav>
       <div
-        class="
-          flex
-          self-end
-          sm:hidden
-          justify-center
-          items-center
-          px-4
-          pt-4
-          block
-        "
+        class="self-end sm:hidden justify-center items-center p-4 block"
+        @click="toggleMenu"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -99,6 +78,30 @@
   </div>
 </template>
 
+<script>
+const navItems = [
+  { name: "Wines", link: "Wines", current: true },
+  { name: "About", link: "About", current: true },
+  { name: "Contact", link: "Contact", current: true },
+  { name: "News", link: "News", current: true },
+]
+
+export default {
+  data() {
+    return {
+      navItems,
+      menuOpen: false,
+    }
+  },
+  methods: {
+    toggleMenu() {
+      this.menuOpen = !this.menuOpen
+      console.log("toggle", this.menuOpen)
+    },
+  },
+}
+</script>
+
 <style>
 /*** TRANSITIONS ***/
 .fade-enter {
@@ -112,5 +115,16 @@
 
 .fade-leave-to {
   opacity: 0;
+}
+
+.nav-trans {
+  height: 0;
+  opacity: 0;
+  transition: height 300ms 200ms, opacity 200ms 0ms;
+}
+.openNav {
+  height: 100vh;
+  opacity: 1;
+  transition: height 400ms 0ms, opacity 200ms 300ms;
 }
 </style>

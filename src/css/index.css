@@ -9,7 +9,7 @@
 
 body {
   /* NOTE: applying this to body tag doesnt work?? */
-  @apply font-inter;
+  /* @apply font-inter; */
 }
 
 h1 {

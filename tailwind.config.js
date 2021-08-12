@@ -13,6 +13,9 @@ module.exports = {
       fontFamily: {
         inter: ["'Inter'", ...defaultTheme.fontFamily.sans],
       },
+      transitionProperty: {
+        height: "height",
+      },
     },
   },
   variants: {
