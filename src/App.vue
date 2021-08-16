@@ -24,19 +24,23 @@
       >
         <img src="./img/turon-logo.svg" alt="Turon Wines" />
       </router-link>
-      <nav :class="[menuOpen ? 'openNav' : '']" class="nav-trans">
-        <!-- <nav
-        class="
-          h-0
-          transition-height
-          duration-300
-          delay-200
-          opacity-0
-          transition-opacity
-          duration-200
-        "
+
+      <nav>
+        <!--       <nav
+        :class="[menuOpen ? 'nav-transition-open' : '']"
+        class="nav-transition-close"
       > -->
-        <ul class="flex flex-col sm:flex-row items-center w-full">
+
+        <ul
+          :class="[menuOpen ? 'flex' : 'hidden']"
+          class="
+            flex-col
+            items-center
+            w-full
+            h-screen
+            sm:flex sm:flex-row sm:h-full
+          "
+        >
           <li v-for="(item, index) in navItems" :key="index">
             <router-link :to="{ name: item.name }" class="px-4 py-3 block">{{
               item.name
@@ -44,6 +48,7 @@
           </li>
         </ul>
       </nav>
+
       <div
         class="self-end sm:hidden justify-center items-center p-4 block"
         @click="toggleMenu"
@@ -117,12 +122,12 @@ export default {
   opacity: 0;
 }
 
-.nav-trans {
+.nav-transition-close {
   height: 0;
   opacity: 0;
   transition: height 300ms 200ms, opacity 200ms 0ms;
 }
-.openNav {
+.nav-transition-open {
   height: 100vh;
   opacity: 1;
   transition: height 400ms 0ms, opacity 200ms 300ms;
