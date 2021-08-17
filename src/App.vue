@@ -1,18 +1,10 @@
 <template>
-  <header class="sm:h-12 outline fixed w-full z-10 bg-white">
-    <div
-      class="
-        flex flex-col-reverse
-        items-center
-        justify-between
-        sm:flex-row sm:justify-start
-      "
-    >
+  <header class="h-12 fixed w-full z-10 bg-white border-b border-black">
+    <div class="flex items-center justify-between sm:justify-start">
       <router-link
         :to="{ name: 'Home' }"
         class="
-          sm:flex
-          hidden
+          flex
           justify-center
           max-w-[7rem]
           items-center
@@ -24,23 +16,8 @@
       >
         <img src="./img/turon-logo.svg" alt="Turon Wines" />
       </router-link>
-
-      <nav>
-        <!--       <nav
-        :class="[menuOpen ? 'nav-transition-open' : '']"
-        class="nav-transition-close"
-      > -->
-
-        <ul
-          :class="[menuOpen ? 'flex' : 'hidden']"
-          class="
-            flex-col
-            items-center
-            w-full
-            h-screen
-            sm:flex sm:flex-row sm:h-full
-          "
-        >
+      <nav class="hidden sm:flex">
+        <ul class="items-center flex">
           <li v-for="(item, index) in navItems" :key="index">
             <router-link :to="{ name: item.name }" class="px-4 py-3 block">{{
               item.name
@@ -50,7 +27,7 @@
       </nav>
 
       <div
-        class="self-end sm:hidden justify-center items-center p-4 block"
+        class="self-end flex justify-center items-center sm:hidden h-12 w-12"
         @click="toggleMenu"
       >
         <svg
@@ -70,6 +47,32 @@
       </div>
     </div>
   </header>
+
+  <!-- mobile menu -->
+  <nav
+    class="
+      w-full
+      h-screen
+      fixed
+      flex
+      items-center
+      justify-center
+      bg-white
+      top-12
+      transition
+      duration-300
+      sm:hidden
+    "
+    :class="[menuOpen ? ' translate-y-0' : ' -translate-y-full']"
+  >
+    <ul class="items-center flex flex-col w-full">
+      <li v-for="(item, index) in navItems" :key="index">
+        <router-link :to="{ name: item.name }" class="px-4 py-3 block">{{
+          item.name
+        }}</router-link>
+      </li>
+    </ul>
+  </nav>
 
   <div class="grid grid-rows-container min-h-screen pt-12">
     <div v-cloak>
@@ -120,16 +123,5 @@ export default {
 
 .fade-leave-to {
   opacity: 0;
-}
-
-.nav-transition-close {
-  height: 0;
-  opacity: 0;
-  transition: height 300ms 200ms, opacity 200ms 0ms;
-}
-.nav-transition-open {
-  height: 100vh;
-  opacity: 1;
-  transition: height 400ms 0ms, opacity 200ms 300ms;
 }
 </style>
